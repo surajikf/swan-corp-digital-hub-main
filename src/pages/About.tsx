@@ -82,24 +82,7 @@ const About = () => {
             Four decades of industrial leadership, innovation, and commitment to excellence 
             across diverse business verticals
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">₹12,000 Cr</div>
-              <div className="text-sm text-gray-300">Annual Revenue</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">15,000+</div>
-              <div className="text-sm text-gray-300">Employees</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">6</div>
-              <div className="text-sm text-gray-300">Business Verticals</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">40+</div>
-              <div className="text-sm text-gray-300">Years of Excellence</div>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -286,15 +269,6 @@ const About = () => {
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       {leader.overview}
                     </p>
-                    <div className="space-y-2">
-                      <div className="font-semibold text-foreground text-sm mb-2">Key Focus Areas:</div>
-                      {leader.subtopics.map((topic, topicIndex) => (
-                        <div key={topicIndex} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                          {topic}
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </Card>

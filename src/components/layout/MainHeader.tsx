@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Factory, Building2, Shield, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/enhanced-button';
 
 const MainHeader = () => {
@@ -16,28 +16,69 @@ const MainHeader = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const businessVerticals = [
+    {
+      title: 'Manufacturing',
+      href: '/businesses/manufacturing',
+      icon: Factory,
+      description: 'Advanced textile manufacturing and heavy engineering solutions',
+      subSectors: [
+        { label: 'Textile Mills', href: '/businesses/manufacturing' },
+        { label: 'Shipbuilding', href: '/businesses/manufacturing' },
+        { label: 'Heavy Engineering', href: '/businesses/manufacturing' },
+        { label: 'Varex Imaging', href: '/businesses/manufacturing/varex' },
+        { label: 'SDHI Systems', href: '/businesses/manufacturing/sdhi' },
+        { label: 'Swan Mills', href: '/businesses/manufacturing/swan-mills' }
+      ]
+    },
+    {
+      title: 'Real Estate',
+      href: '/businesses/real-estate',
+      icon: Building2,
+      description: 'Premium residential and commercial development projects',
+      subSectors: [
+        { label: 'Residential Projects', href: '/businesses/real-estate' },
+        { label: 'Commercial Development', href: '/businesses/real-estate' },
+        { label: 'Smart Cities', href: '/businesses/real-estate' },
+        { label: 'Infrastructure', href: '/businesses/real-estate' }
+      ]
+    },
+    {
+      title: 'Defence',
+      href: '/businesses/defence',
+      icon: Shield,
+      description: 'Naval shipbuilding and defence manufacturing',
+      subSectors: [
+        { label: 'Naval Shipbuilding', href: '/businesses/defence' },
+        { label: 'Vessel Repair', href: '/businesses/defence' },
+        { label: 'Ammunition Manufacturing', href: '/businesses/defence' },
+        { label: 'Defence Systems', href: '/businesses/defence' }
+      ]
+    },
+    {
+      title: 'Energy',
+      href: '/businesses/energy',
+      icon: Zap,
+      description: 'LNG infrastructure, petrochemicals, and offshore solutions',
+      subSectors: [
+        { label: 'LNG & Energy Infrastructure', href: '/businesses/energy' },
+        { label: 'Petrochemicals', href: '/businesses/energy' },
+        { label: 'Offshore Fabrication', href: '/businesses/energy' },
+        { label: 'Petroleum Trading', href: '/businesses/energy' }
+      ]
+    }
+  ];
+
   const navigationItems = [
     {
       label: 'About Us',
-      href: '/about',
-      dropdown: [
-        { label: 'Overview', href: '/about' },
-        { label: 'Leadership Team', href: '/about/leadership' },
-        { label: 'Our Journey', href: '/about/milestones' },
-        { label: 'CSR', href: '/about/csr' },
-      ]
+      href: '/about'
     },
     {
       label: 'Businesses',
       href: '/businesses',
-      dropdown: [
-        { label: 'Manufacturing', href: '/businesses/manufacturing' },
-        { label: 'Real Estate', href: '/businesses/real-estate' },
-        { label: 'Defence', href: '/businesses/defence' },
-        { label: 'Energy', href: '/businesses/energy' },
-        { label: 'Petrochemicals', href: '/businesses/petrochemicals' },
-        { label: 'Offshore Fabrication', href: '/businesses/offshore' },
-      ]
+      isMegaMenu: true,
+      businessVerticals: businessVerticals
     },
     {
       label: 'Investors',
@@ -87,22 +128,62 @@ const MainHeader = () => {
                   }`}
                 >
                   <span>{item.label}</span>
-                  {item.dropdown && <ChevronDown className="h-4 w-4" />}
+                  {item.isMegaMenu && <ChevronDown className="h-4 w-4" />}
                 </Link>
                 
-                {/* Dropdown Menu */}
-                {item.dropdown && (
-                  <div className="absolute top-full left-0 w-56 bg-white shadow-xl rounded-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                    <div className="py-2">
-                      {item.dropdown.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.label}
-                          to={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-primary hover:text-white transition-colors duration-200"
-                        >
-                          {dropdownItem.label}
-                        </Link>
-                      ))}
+
+
+                {/* Mega Menu for Businesses */}
+                {item.isMegaMenu && (
+                  <div className="absolute top-full left-0 w-screen max-w-6xl bg-white shadow-2xl rounded-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2 -ml-32">
+                    <div className="p-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {item.businessVerticals.map((business) => (
+                          <div key={business.title} className="space-y-4">
+                            {/* Business Header */}
+                            <div className="flex items-center space-x-3 mb-4">
+                              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <business.icon className="h-5 w-5 text-primary" />
+                              </div>
+                              <div>
+                                <h3 className="font-playfair font-semibold text-foreground">
+                                  {business.title}
+                                </h3>
+                                <p className="text-xs text-muted-foreground mt-1">
+                                  {business.description}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Sub-sectors */}
+                            <div className="space-y-2">
+                              {business.subSectors.map((subSector) => (
+                                <Link
+                                  key={subSector.label}
+                                  to={subSector.href}
+                                  className="flex items-center justify-between group/item py-2 px-3 rounded-md hover:bg-primary/5 transition-colors duration-200"
+                                >
+                                  <span className="text-sm text-muted-foreground group-hover/item:text-foreground transition-colors">
+                                    {subSector.label}
+                                  </span>
+                                  <ArrowRight className="h-3 w-3 text-muted-foreground group-hover/item:text-primary transition-colors opacity-0 group-hover/item:opacity-100" />
+                                </Link>
+                              ))}
+                            </div>
+
+                            {/* View All Button */}
+                            <div className="pt-2">
+                              <Link
+                                to={business.href}
+                                className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                              >
+                                View All {business.title}
+                                <ArrowRight className="ml-1 h-3 w-3" />
+                              </Link>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -110,12 +191,7 @@ const MainHeader = () => {
             ))}
           </div>
 
-          {/* Contact Button */}
-          <div className="hidden lg:block">
-            <Button variant="corporate" size="lg" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-          </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -155,11 +231,7 @@ const MainHeader = () => {
                   )}
                 </div>
               ))}
-              <div className="px-4 pt-4 border-t border-border">
-                <Button variant="corporate" size="lg" className="w-full" asChild>
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
-                </Button>
-              </div>
+
             </div>
           </div>
         )}

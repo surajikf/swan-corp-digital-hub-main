@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import HeroSection from '@/components/home/HeroSection';
+import HeroCarousel from '@/components/home/HeroCarousel';
 import AboutOverview from '@/components/home/AboutOverview';
 import VideoSection from '@/components/home/VideoSection';
 import BusinessVerticals from '@/components/home/BusinessVerticals';
@@ -11,7 +11,7 @@ import CareersSection from '@/components/home/CareersSection';
 const Index = () => {
   return (
     <Layout>
-      <HeroSection />
+      <HeroCarousel />
       <AboutOverview />
       <VideoSection />
       <BusinessVerticals />

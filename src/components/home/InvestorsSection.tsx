@@ -1,35 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, FileText, Users, Shield, ArrowRight } from 'lucide-react';
+import { FileText, Users, Shield, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/enhanced-button';
 
 const InvestorsSection = () => {
-  const investorHighlights = [
-    {
-      icon: TrendingUp,
-      title: 'Strong Financials',
-      value: '₹12,000 Cr',
-      description: 'Annual Revenue with consistent growth trajectory'
-    },
-    {
-      icon: FileText,
-      title: 'Transparent Reporting',
-      value: '100%',
-      description: 'Compliance with all regulatory requirements'
-    },
-    {
-      icon: Users,
-      title: 'Diverse Portfolio',
-      value: '6',
-      description: 'Business verticals providing stability and growth'
-    },
-    {
-      icon: Shield,
-      title: 'Governance',
-      value: 'AAA',
-      description: 'Highest standards of corporate governance'
-    }
-  ];
 
   return (
     <section className="section-padding bg-gradient-to-br from-primary/5 to-gold/5">
@@ -47,27 +21,7 @@ const InvestorsSection = () => {
           </p>
         </div>
 
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {investorHighlights.map((highlight, index) => (
-            <div 
-              key={highlight.title}
-              className="text-center animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-16 h-16 bg-white rounded-xl shadow-lg flex items-center justify-center mx-auto mb-4 hover-lift">
-                <highlight.icon className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-2xl font-bold text-primary mb-2">{highlight.value}</div>
-              <h3 className="font-playfair font-semibold text-lg text-foreground mb-2">
-                {highlight.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {highlight.description}
-              </p>
-            </div>
-          ))}
-        </div>
+
 
         {/* Key Information Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">

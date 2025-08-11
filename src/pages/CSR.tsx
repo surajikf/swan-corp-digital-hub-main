@@ -111,16 +111,7 @@ const CSR = () => {
                 three years in CSR activities, often exceeding this statutory requirement to maximize 
                 our positive impact on society.
               </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">2.5%</div>
-                  <div className="text-sm text-muted-foreground">of Net Profits Invested</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gold mb-1">4</div>
-                  <div className="text-sm text-muted-foreground">Key Focus Areas</div>
-                </div>
-              </div>
+
             </div>
             <div className="grid grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (

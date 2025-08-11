@@ -16,7 +16,6 @@ const Businesses = () => {
       icon: Factory,
       image: manufacturingImg,
       href: '/businesses/manufacturing',
-      stats: ['3 Manufacturing Units', '2000+ Employees', '₹3000 Cr Revenue'],
       highlights: ['Textile Mills', 'Shipbuilding', 'Heavy Engineering']
     },
     {
@@ -25,7 +24,6 @@ const Businesses = () => {
       icon: Building2,
       image: realEstateImg,
       href: '/businesses/real-estate',
-      stats: ['25+ Projects', '5 Million Sq Ft', '₹2500 Cr Portfolio'],
       highlights: ['Residential', 'Commercial', 'Smart Cities']
     },
     {
@@ -34,35 +32,15 @@ const Businesses = () => {
       icon: Shield,
       image: defenceImg,
       href: '/businesses/defence',
-      stats: ['Strategic Partner', '15+ Naval Projects', 'Defence Excellence'],
       highlights: ['Naval Shipbuilding', 'Vessel Repair', 'Ammunition Manufacturing']
     },
     {
       title: 'Energy',
-      description: 'LNG terminals, petroleum trading, and offshore solutions contributing to India\'s energy security and clean energy transition.',
+      description: 'LNG terminals, petroleum trading, petrochemicals, and offshore solutions contributing to India\'s energy security and clean energy transition.',
       icon: Zap,
       image: energyImg,
       href: '/businesses/energy',
-      stats: ['LNG Infrastructure', 'Clean Energy', '₹4000 Cr Operations'],
-      highlights: ['LNG Terminals', 'Petroleum Trading', 'Offshore Solutions']
-    },
-    {
-      title: 'Petrochemicals',
-      description: 'Integrated petrochemical operations and global trading network serving diverse industrial and consumer applications.',
-      icon: Droplets,
-      image: energyImg,
-      href: '/businesses/petrochemicals',
-      stats: ['Global Network', 'Integrated Operations', 'Quality Products'],
-      highlights: ['Chemical Trading', 'Distribution', 'Quality Assurance']
-    },
-    {
-      title: 'Offshore Fabrication',
-      description: 'Marine engineering and offshore structure fabrication supporting oil & gas exploration and renewable energy projects.',
-      icon: Anchor,
-      image: defenceImg,
-      href: '/businesses/offshore',
-      stats: ['Deep Water Expertise', 'Marine Engineering', 'Global Projects'],
-      highlights: ['Offshore Structures', 'Marine Engineering', 'Project Management']
+      highlights: ['LNG Terminals', 'Petroleum Trading', 'Offshore Fabrication']
     }
   ];
 
@@ -85,7 +63,7 @@ const Businesses = () => {
         <div className="max-w-7xl mx-auto container-padding">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-6">
-              Six Pillars of Growth
+              Four Pillars of Growth
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Swan Corp's diversified business portfolio spans across strategic sectors, 
@@ -128,14 +106,7 @@ const Businesses = () => {
                     {business.description}
                   </p>
 
-                  {/* Stats */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                    {business.stats.map((stat, statIndex) => (
-                      <div key={statIndex} className="text-center p-3 bg-primary/5 rounded-lg">
-                        <div className="text-sm font-medium text-primary">{stat}</div>
-                      </div>
-                    ))}
-                  </div>
+
 
                   {/* Highlights */}
                   <div className="flex flex-wrap gap-2 mb-6">

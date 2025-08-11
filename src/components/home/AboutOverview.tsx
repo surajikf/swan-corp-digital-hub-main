@@ -48,16 +48,7 @@ const AboutOverview = () => {
               growth has positioned us as a leader in every sector we operate.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-              <div className="bg-primary/5 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-primary mb-1">₹12,000 Cr</div>
-                <div className="text-sm text-muted-foreground">Annual Revenue</div>
-              </div>
-              <div className="bg-gold/10 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-gold mb-1">15,000+</div>
-                <div className="text-sm text-muted-foreground">Team Members</div>
-              </div>
-            </div>
+
 
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button variant="default" size="lg" asChild>

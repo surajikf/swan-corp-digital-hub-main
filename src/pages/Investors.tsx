@@ -96,27 +96,9 @@ const Investors = () => {
           <h1 className="text-4xl md:text-6xl font-playfair font-bold mb-6">
             Investor <span className="text-gold">Relations</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
             Building sustainable value through transparent governance and strategic growth
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">₹12,000 Cr</div>
-              <div className="text-sm text-gray-300">Annual Revenue</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">18.5%</div>
-              <div className="text-sm text-gray-300">ROE</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">₹485</div>
-              <div className="text-sm text-gray-300">Share Price</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-gold mb-1">₹8,500 Cr</div>
-              <div className="text-sm text-gray-300">Market Cap</div>
-            </div>
-          </div>
         </div>
       </section>
 

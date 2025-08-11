@@ -46,17 +46,7 @@ const SustainabilitySection = () => {
               stewardship, social responsibility, and ethical governance.
             </p>
 
-            {/* Key Stats */}
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-2xl font-bold text-green-600 mb-1">30%</div>
-                <div className="text-sm text-green-700">Carbon Reduction Target</div>
-              </div>
-              <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 mb-1">50,000+</div>
-                <div className="text-sm text-blue-700">Lives Impacted through CSR</div>
-              </div>
-            </div>
+
 
             <Button variant="corporate" size="lg" asChild>
               <Link to="/about/csr">
@@ -90,22 +80,7 @@ const SustainabilitySection = () => {
               </div>
             ))}
 
-            {/* Sustainability Report CTA */}
-            <div className="corporate-card p-6 bg-gradient-to-r from-primary/5 to-gold/5 border-primary/20">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-playfair font-semibold text-lg text-foreground mb-2">
-                    Sustainability Report 2024
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Download our comprehensive ESG report
-                  </p>
-                </div>
-                <Button variant="outline" size="sm">
-                  Download
-                </Button>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swan Corporation - Website Wireframe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .subsection {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+
+        .subsection-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .wireframe-element {
+            background: #e8f4fd;
+            border: 2px dashed #3498db;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .wireframe-element::before {
+            content: attr(data-label);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+
+        .header-section {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-section {
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .animation-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .carousel-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #bdc3c7;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background: #3498db;
+        }
+
+        .tab-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .tab-header {
+            display: flex;
+            background: #f8f9fa;
+        }
+
+        .tab-button {
+            padding: 15px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button.active {
+            border-bottom-color: #3498db;
+            background: white;
+        }
+
+        .tab-content {
+            padding: 20px;
+            background: white;
+        }
+
+        .masonry-grid {
+            columns: 3;
+            column-gap: 20px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .accordion-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .accordion-header {
+            padding: 15px;
+            background: #f8f9fa;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-content {
+            padding: 15px;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .map-container {
+            height: 300px;
+            background: #e8f4fd;
+            border: 2px dashed #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .scroll-item {
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .filter-button.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        .footer-section {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .masonry-grid {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <h1 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Swan Corporation - Website Wireframe</h1>
+        
+        <!-- 🏠 HOME PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">🏠 HOME PAGE</h2>
+            
+            <!-- Header -->
+            <div class="subsection">
+                <h3 class="subsection-title">Header</h3>
+                <div class="header-section">
+                    <div class="wireframe-element" data-label="Topbar">
+                        <strong>Topbar:</strong> Ticker Symbol | Language Switcher (fade dropdown) | Search | Global Presence | Contact Us
+                        <div class="animation-note">Sticky Navigation with smooth scroll-down effect</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="subsection">
+                <h3 class="subsection-title">Hero Section</h3>
+                <div class="hero-section">
+                    <div class="wireframe-element" data-label="Hero Carousel" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <h2 style="margin-bottom: 20px;">Full-screen autoplay carousel (3-5 slides)</h2>
+                        <p>Videos (10-15s, autoplay muted loop)</p>
+                        <p>Text animation: Fade-in on scroll or typewriter effect</p>
+                        <div class="carousel-indicator">
+                            <div class="indicator active"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <button class="button">Primary CTA</button>
+                            <button class="button">Secondary CTA</button>
+                        </div>
+                        <div class="animation-note">CTA buttons with hover glow or magnetic pull-in cursor</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sections -->
+            <div class="subsection">
+                <h3 class="subsection-title">Interactive Sections</h3>
+                <div class="grid-layout">
+                    <div class="card wireframe-element" data-label="Business Cards">
+                        <h4>Business Verticals</h4>
+                        <p>Manufacturing, Real Estate, Defence, Energy</p>
+                        <div class="animation-note">Cards Hover Effects: Zoom-in images, shadow lift, icon morph</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Investors Section">
+                        <h4>Investors</h4>
+                        <p>Financial reports, governance, policies</p>
+                        <div class="animation-note">Scroll-triggered animations using GSAP/AOS</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Careers Section">
+                        <h4>Careers</h4>
+                        <p>Job listings, life at Swan</p>
+                        <div class="animation-note">Fade-up | Slide-in | Scale-up for section entries</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cursor Effects -->
+            <div class="subsection">
+                <h3 class="subsection-title">Cursor Effects</h3>
+                <div class="wireframe-element" data-label="Custom Cursor">
+                    <strong>Custom cursor styling:</strong> Circle/outline with hover state change
+                    <div class="animation-note">Magnetic cursor on CTAs or hero CTAs (pull effect)</div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="subsection">
+                <h3 class="subsection-title">Footer</h3>
+                <div class="footer-section">
+                    <div class="footer-grid">
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Leadership</a></li>
+                                <li><a href="#">Milestones</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Businesses</h3>
+                            <ul>
+                                <li><a href="#">Manufacturing</a></li>
+                                <li><a href="#">Real Estate</a></li>
+                                <li><a href="#">Defence</a></li>
+                                <li><a href="#">Energy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Investors</h3>
+                            <ul>
+                                <li><a href="#">Financials</a></li>
+                                <li><a href="#">Governance</a></li>
+                                <li><a href="#">Policies</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Connect</h3>
+                            <ul>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Media</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="animation-note">Footer elements fade in with scroll, icons animate subtly on hover</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🧭 SITE-WIDE UI/UX EFFECTS -->
+        <div class="page-section">
+            <h2 class="section-title">🧭 SITE-WIDE UI/UX EFFECTS</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Navigation Experience</h3>
+                <div class="wireframe-element" data-label="Smooth Scrolling">
+                    <strong>Smooth scrolling with easing</strong>
+                    <div class="animation-note">Back to Top button fades in after scroll</div>
+                </div>
+                <div class="wireframe-element" data-label="Sticky Headers">
+                    <strong>Sticky section headers on longer pages</strong>
+                    <div class="animation-note">e.g., ESG, Careers pages</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Page Transitions</h3>
+                <div class="wireframe-element" data-label="Page Transitions">
+                    <strong>Fade-out → Fade-in or overlay wipe effect on page change</strong>
+                    <div class="animation-note">Can use libraries like Barba.js or Framer Motion (React-based)</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Lazy Loading</h3>
+                <div class="wireframe-element" data-label="Lazy Loading">
+                    <strong>Images and carousels load as user scrolls</strong>
+                    <div class="animation-note">Improves performance and speed</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🧱 BUSINESSES SECTION -->
+        <div class="page-section">
+            <h2 class="section-title">🧱 BUSINESSES SECTION (LANDING PAGE)</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Horizontal Scroll Effects</h3>
+                <div class="horizontal-scroll">
+                    <div class="scroll-item wireframe-element" data-label="Project Display">
+                        <h4>Manufacturing</h4>
+                        <p>Textile, Shipbuilding, Engineering</p>
+                        <div class="animation-note">Slide-up overlay, animated icon</div>
+                    </div>
+                    <div class="scroll-item wireframe-element" data-label="Project Display">
+                        <h4>Real Estate</h4>
+                        <p>Commercial, Residential, Infrastructure</p>
+                        <div class="animation-note">Click-to-expand preview (modal optional)</div>
+                    </div>
+                    <div class="scroll-item wireframe-element" data-label="Project Display">
+                        <h4>Defence</h4>
+                        <p>Aerospace, Naval, Land Systems</p>
+                        <div class="animation-note">Hover interaction on business cards</div>
+                    </div>
+                    <div class="scroll-item wireframe-element" data-label="Project Display">
+                        <h4>Energy</h4>
+                        <p>LNG, Petroleum, Offshore</p>
+                        <div class="animation-note">Animated underline CTA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🔧 MANUFACTURING PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">🔧 MANUFACTURING PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Filtering System (Textile Section)</h3>
+                <div class="filter-container">
+                    <button class="filter-button active">All</button>
+                    <button class="filter-button">SDHI</button>
+                    <button class="filter-button">Swan Mills</button>
+                    <button class="filter-button">Varex</button>
+                </div>
+                <div class="animation-note">Filters slide in with micro-interactions</div>
+                
+                <div class="grid-layout">
+                    <div class="card wireframe-element" data-label="Manufacturing Item">
+                        <h4>SDHI</h4>
+                        <p>Shipbuilding and Heavy Industries</p>
+                        <div class="animation-note">Result grid with animated entry</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Manufacturing Item">
+                        <h4>Swan Mills</h4>
+                        <p>Textile Manufacturing</p>
+                        <div class="animation-note">Items fade in or zoom on scroll</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Manufacturing Item">
+                        <h4>Varex</h4>
+                        <p>Engineering Solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Enquiry Form</h3>
+                <div class="wireframe-element" data-label="Contact Form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Name">
+                        <div class="animation-note">Animated field labels (float labels)</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" placeholder="Message" rows="4"></textarea>
+                    </div>
+                    <button class="button">Submit</button>
+                    <div class="animation-note">Submit button ripple / success feedback</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🛠️ SDHI & VAREX Sections -->
+        <div class="page-section">
+            <h2 class="section-title">🛠️ SDHI & VAREX Sections</h2>
+            
+            <div class="subsection">
+                <div class="wireframe-element" data-label="SDHI Banner">
+                    <h3>SDHI - Shipbuilding and Heavy Industries</h3>
+                    <p>Leading shipbuilding and heavy engineering solutions</p>
+                    <div class="animation-note">SDHI & Varex banners animate in with parallax scroll</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="wireframe-element" data-label="Varex Banner">
+                    <h3>Varex - Engineering Excellence</h3>
+                    <p>Advanced engineering and manufacturing solutions</p>
+                    <div class="animation-note">CTA links pulse subtly on hover</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🏢 REALTY PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">🏢 REALTY PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Horizontal Scroll Carousel</h3>
+                <div class="tab-container">
+                    <div class="tab-header">
+                        <button class="tab-button active">Upcoming Projects</button>
+                        <button class="tab-button">Past Projects</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="horizontal-scroll">
+                            <div class="scroll-item wireframe-element" data-label="Project Card">
+                                <h4>Commercial Complex</h4>
+                                <p>Downtown Business District</p>
+                                <div class="animation-note">Snap scrolling, touch support on mobile</div>
+                            </div>
+                            <div class="scroll-item wireframe-element" data-label="Project Card">
+                                <h4>Residential Tower</h4>
+                                <p>Luxury Apartments</p>
+                                <div class="animation-note">Each project card expands on click/tap</div>
+                            </div>
+                            <div class="scroll-item wireframe-element" data-label="Project Card">
+                                <h4>Infrastructure</h4>
+                                <p>Highway Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🛡️ DEFENCE PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">🛡️ DEFENCE PAGE</h2>
+            
+            <div class="subsection">
+                <div class="wireframe-element" data-label="Defence Banner">
+                    <h3>Defence & Aerospace</h3>
+                    <p>Advanced defence solutions and aerospace technology</p>
+                    <div class="animation-note">Fade + slide-in banners</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Infrastructure Blocks</h3>
+                <div class="grid-layout">
+                    <div class="card wireframe-element" data-label="Infrastructure">
+                        <h4>Aerospace</h4>
+                        <p>Aviation technology and systems</p>
+                        <div class="animation-note">Infrastructure blocks animate on scroll</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Infrastructure">
+                        <h4>Naval Systems</h4>
+                        <p>Maritime defence solutions</p>
+                        <div class="animation-note">e.g., flip-in, fade scale</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Infrastructure">
+                        <h4>Land Systems</h4>
+                        <p>Ground defence equipment</p>
+                    </div>
+                </div>
+                <div class="animation-note">CTA buttons animate with glow effect</div>
+            </div>
+        </div>
+
+        <!-- ⚡ ENERGY PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">⚡ ENERGY PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Tab System</h3>
+                <div class="tab-container">
+                    <div class="tab-header">
+                        <button class="tab-button active">LNG</button>
+                        <button class="tab-button">Petroleum</button>
+                        <button class="tab-button">Offshore Fabrication</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="wireframe-element" data-label="Energy Content">
+                            <h4>LNG Operations</h4>
+                            <p>Liquefied Natural Gas processing and distribution</p>
+                            <div class="animation-note">Dynamic underline animation on active tab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Partner Logos</h3>
+                <div class="horizontal-scroll">
+                    <div class="scroll-item">Partner 1</div>
+                    <div class="scroll-item">Partner 2</div>
+                    <div class="scroll-item">Partner 3</div>
+                    <div class="scroll-item">Partner 4</div>
+                </div>
+                <div class="animation-note">Partner logos appear via scroll-triggered stagger animation</div>
+            </div>
+        </div>
+
+        <!-- 📈 INVESTORS PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">📈 INVESTORS PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Financial Reports</h3>
+                <div class="grid-layout">
+                    <div class="card wireframe-element" data-label="Report Card">
+                        <h4>Annual Report 2023</h4>
+                        <p>Download PDF</p>
+                        <div class="animation-note">Downloadable reports/cards animate in via stagger effect</div>
+                    </div>
+                    <div class="card wireframe-element" data-label="Report Card">
+                        <h4>Quarterly Report Q4</h4>
+                        <p>Download PDF</p>
+                    </div>
+                    <div class="card wireframe-element" data-label="Report Card">
+                        <h4>Financial Statements</h4>
+                        <p>Download PDF</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Accordion Sections</h3>
+                <div class="accordion-item">
+                    <div class="accordion-header">Corporate Governance</div>
+                    <div class="accordion-content active">
+                        <p>Board structure, committees, and governance policies</p>
+                        <div class="animation-note">Smooth expand/collapse animations</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Policies</div>
+                    <div class="accordion-content">
+                        <p>Corporate policies and guidelines</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Committees</div>
+                    <div class="accordion-content">
+                        <p>Board committees and their functions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 👥 CAREERS PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">👥 CAREERS PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Jobs Listing</h3>
+                <div class="wireframe-element" data-label="Job Listings">
+                    <div class="card">
+                        <h4>Senior Engineer - Manufacturing</h4>
+                        <p>Location: Mumbai | Department: Engineering</p>
+                        <button class="button">Apply Now</button>
+                    </div>
+                    <div class="card">
+                        <h4>Project Manager - Real Estate</h4>
+                        <p>Location: Delhi | Department: Real Estate</p>
+                        <button class="button">Apply Now</button>
+                    </div>
+                    <div class="card">
+                        <h4>Analyst - Energy</h4>
+                        <p>Location: Bangalore | Department: Energy</p>
+                        <button class="button">Apply Now</button>
+                    </div>
+                    <div class="animation-note">Endless scroll jobs listing: Load more on scroll or click</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Life at Swan</h3>
+                <div class="grid-layout">
+                    <div class="card wireframe-element" data-label="Gallery Item">
+                        <div style="height: 150px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            Image 1
+                        </div>
+                        <p>Team Building</p>
+                    </div>
+                    <div class="card wireframe-element" data-label="Gallery Item">
+                        <div style="height: 150px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            Image 2
+                        </div>
+                        <p>Office Culture</p>
+                    </div>
+                    <div class="card wireframe-element" data-label="Gallery Item">
+                        <div style="height: 150px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            Image 3
+                        </div>
+                        <p>Work Environment</p>
+                    </div>
+                </div>
+                <div class="animation-note">Image gallery with lightbox zoom-in animation</div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Apply Form</h3>
+                <div class="wireframe-element" data-label="Application Form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-input">
+                            <option>Select Position</option>
+                            <option>Senior Engineer</option>
+                            <option>Project Manager</option>
+                            <option>Analyst</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-input">
+                    </div>
+                    <button class="button">Submit Application</button>
+                    <div class="animation-note">Apply form with field-by-field reveal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📰 MEDIA PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">📰 MEDIA PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Masonry Gallery</h3>
+                <div class="masonry-grid">
+                    <div class="masonry-item wireframe-element" data-label="Media Item">
+                        <div style="height: 200px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            News Article 1
+                        </div>
+                        <div style="padding: 15px;">
+                            <h4>Company Milestone</h4>
+                            <p>Major achievement in manufacturing sector</p>
+                        </div>
+                    </div>
+                    <div class="masonry-item wireframe-element" data-label="Media Item">
+                        <div style="height: 150px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            News Article 2
+                        </div>
+                        <div style="padding: 15px;">
+                            <h4>Energy Expansion</h4>
+                            <p>New LNG facility inauguration</p>
+                        </div>
+                    </div>
+                    <div class="masonry-item wireframe-element" data-label="Media Item">
+                        <div style="height: 250px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            Video Content
+                        </div>
+                        <div style="padding: 15px;">
+                            <h4>Corporate Video</h4>
+                            <p>Company overview and vision</p>
+                        </div>
+                    </div>
+                    <div class="masonry-item wireframe-element" data-label="Media Item">
+                        <div style="height: 180px; background: #e8f4fd; display: flex; align-items: center; justify-content: center;">
+                            Press Release
+                        </div>
+                        <div style="padding: 15px;">
+                            <h4>Press Release</h4>
+                            <p>Latest company announcements</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-note">Fade-in on scroll, hover to view title/description, video previews with play-on-hover</div>
+            </div>
+        </div>
+
+        <!-- 📍 CONTACT PAGE -->
+        <div class="page-section">
+            <h2 class="section-title">📍 CONTACT PAGE</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Interactive Map</h3>
+                <div class="map-container wireframe-element" data-label="Google Maps">
+                    <div>
+                        <h4>Interactive Google Maps Embed</h4>
+                        <p>Office locations with animated markers</p>
+                        <div class="animation-note">Office markers animate on page load</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Contact Form</h3>
+                <div class="wireframe-element" data-label="Contact Form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Name">
+                        <div class="animation-note">Form expands on focus</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-input">
+                            <option>Select Department</option>
+                            <option>General Inquiry</option>
+                            <option>Investor Relations</option>
+                            <option>Media</option>
+                            <option>Careers</option>
+                        </select>
+                        <div class="animation-note">Select dropdowns slide open</div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" placeholder="Message" rows="4"></textarea>
+                    </div>
+                    <button class="button">Send Message</button>
+                    <div class="animation-note">Smooth error/success transitions, form submits with animated confirmation check</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

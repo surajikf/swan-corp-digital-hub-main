@@ -190,38 +190,7 @@ const KeyMilestones = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="section-padding bg-secondary">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
-              Journey in Numbers
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Key achievements and growth metrics over four decades
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="p-6 text-center hover-lift">
-              <div className="text-3xl font-bold text-primary mb-2">44</div>
-              <div className="text-muted-foreground">Years of Operations</div>
-            </Card>
-            <Card className="p-6 text-center hover-lift">
-              <div className="text-3xl font-bold text-gold mb-2">6</div>
-              <div className="text-muted-foreground">Business Verticals</div>
-            </Card>
-            <Card className="p-6 text-center hover-lift">
-              <div className="text-3xl font-bold text-primary mb-2">15,000+</div>
-              <div className="text-muted-foreground">Employees</div>
-            </Card>
-            <Card className="p-6 text-center hover-lift">
-              <div className="text-3xl font-bold text-gold mb-2">₹12,000 Cr</div>
-              <div className="text-muted-foreground">Annual Revenue</div>
-            </Card>
-          </div>
-        </div>
-      </section>
+
 
       {/* Future Vision */}
       <section className="section-padding bg-gradient-primary text-white">

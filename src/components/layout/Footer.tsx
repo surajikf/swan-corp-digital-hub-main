@@ -20,8 +20,6 @@ const Footer = () => {
     { label: 'Real Estate', href: '/businesses/real-estate' },
     { label: 'Defence', href: '/businesses/defence' },
     { label: 'Energy', href: '/businesses/energy' },
-    { label: 'Petrochemicals', href: '/businesses/petrochemicals' },
-    { label: 'Offshore Fabrication', href: '/businesses/offshore' },
   ];
 
   const legalLinks = [
@@ -57,7 +55,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               A leading Indian conglomerate with diversified business interests across manufacturing, 
-              real estate, defence, energy, and offshore fabrication.
+              real estate, defence, and energy sectors.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">

@@ -14,48 +14,28 @@ const BusinessVerticals = () => {
       description: 'Advanced textile manufacturing and heavy engineering solutions',
       icon: Factory,
       image: manufacturingImg,
-      href: '/businesses/manufacturing',
-      stats: '3 Manufacturing Units'
+      href: '/businesses/manufacturing'
     },
     {
       title: 'Real Estate',
       description: 'Premium residential and commercial development projects',
       icon: Building2,
       image: realEstateImg,
-      href: '/businesses/real-estate',
-      stats: '25+ Projects Delivered'
+      href: '/businesses/real-estate'
     },
     {
       title: 'Defence',
       description: 'Naval shipbuilding, repair, and ammunition manufacturing',
       icon: Shield,
       image: defenceImg,
-      href: '/businesses/defence',
-      stats: 'Strategic Defence Partner'
+      href: '/businesses/defence'
     },
     {
       title: 'Energy',
-      description: 'LNG terminals, petroleum trading, and offshore solutions',
+      description: 'LNG terminals, petroleum trading, petrochemicals, and offshore solutions',
       icon: Zap,
       image: energyImg,
-      href: '/businesses/energy',
-      stats: 'Clean Energy Focus'
-    },
-    {
-      title: 'Petrochemicals',
-      description: 'Integrated petrochemical operations and trading',
-      icon: Droplets,
-      image: energyImg,
-      href: '/businesses/petrochemicals',
-      stats: 'Global Trading Network'
-    },
-    {
-      title: 'Offshore Fabrication',
-      description: 'Marine engineering and offshore structure fabrication',
-      icon: Anchor,
-      image: defenceImg,
-      href: '/businesses/offshore',
-      stats: 'Deep Water Expertise'
+      href: '/businesses/energy'
     }
   ];
 
@@ -74,7 +54,7 @@ const BusinessVerticals = () => {
         </div>
 
         {/* Business Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {businesses.map((business, index) => (
             <div 
               key={business.title}
@@ -94,11 +74,7 @@ const BusinessVerticals = () => {
                     <business.icon className="h-6 w-6 text-primary" />
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4">
-                  <span className="bg-gold text-white text-xs px-3 py-1 rounded-full font-medium">
-                    {business.stats}
-                  </span>
-                </div>
+
               </div>
 
               {/* Content */}
